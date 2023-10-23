@@ -9,14 +9,15 @@
 
 .nav-bar {
   position: sticky;
-  height: 70px;
+  min-height: 4rem;
   background-color: #E86A33;
   align-items: center;
-
+  width: 100%;
 }
 
 .nav-bar button {
-  width: 200px;
+  width: -webkit-fill-available;
+  padding: 0 10px;
   height: 40px;
   border-radius: 10px;
   border: none;

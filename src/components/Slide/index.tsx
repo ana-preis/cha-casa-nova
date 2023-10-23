@@ -1,6 +1,5 @@
-import { useState, createRef } from "react";
+import { createRef } from "react";
 import './../../pages/Homepage/styles.scss'
-import { SlideType } from "../../types/SliderTypes";
 
 interface SlideProps {
   key: any;
@@ -11,7 +10,7 @@ interface SlideProps {
 
 const Slide = (props: SlideProps) => {
 
-  const { key, slide, current, handleSlideClick } = props;
+  const { slide, current, handleSlideClick } = props;
   const slideEl = createRef<HTMLDivElement>();
 
   const handleMouseMove = (event: any) => {
@@ -35,7 +34,7 @@ const Slide = (props: SlideProps) => {
     target.style.opacity = '1'
   }
   
-  const { src, button, headline, index } = slide
+  const { src, headline, index } = slide
   let classNames = 'slide'
   
   if (current === index) classNames += ' slide--current'
@@ -61,7 +60,6 @@ const Slide = (props: SlideProps) => {
       
       <article className="slide__content">
         <h2 className="slide__headline">{headline}</h2>
-        <button className="slide__action btn">{button}</button>
       </article>
     </li>
   )

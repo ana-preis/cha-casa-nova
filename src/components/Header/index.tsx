@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>
+    <div className='nav'>
       <Link className='header-link-img' to="/">
-        <img src="holidays.png" className="header-img" />
+        <img src="holidays.png" className="header-img" alt='holidays'/>
       </Link>
       <div className='nav-bar flex-row jc-around'>
         <Link to="/lista">

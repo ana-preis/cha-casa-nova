@@ -5,28 +5,34 @@ const DIA = "xx/xx/xx"
 const slideData = [
   {
     index: 0,
-    headline: 'New Fashion Apparel',
-    button: 'Shop now',
-    src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/fashion.jpg'
+    headline: 'Primeira foto do casal',
+    src: 'first.jpg'
   },
   {
     index: 1,
-    headline: 'In The Wilderness',
-    button: 'Book travel',
-    src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/forest.jpg'
+    headline: 'Família nos primeiros dias na casa nova',
+    src: 'fam.jpg'
   },
   {
     index: 2,
-    headline: 'For Your Current Mood',
-    button: 'Listen',
-    src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/guitar.jpg'
+    headline: 'Juntos na covid',
+    src: 'covid.jpg'
   },
   {
     index: 3,
-    headline: 'Focus On The Writing',
-    button: 'Get Focused',
-    src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/typewriter.jpg'
-  }
+    headline: 'Formais',
+    src: 'formais.jpg'
+  },
+  {
+    index: 4,
+    headline: 'Viajando',
+    src: 'viajando.jpg'
+  },
+  {
+    index: 5,
+    headline: 'Viajando de moto',
+    src: 'viajando-moto.jpg'
+  },
 ]
 
 export {
