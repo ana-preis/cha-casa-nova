@@ -1,0 +1,21 @@
+.main-container {
+  padding-top: 20px;
+  background-color: #263A29;
+}
+
+.container-title {
+  text-align: center;
+  align-items: center;
+  color: #fff;
+}
+
+.container-title-btn {
+  height: 3rem;
+	width: 15rem;
+	font-size: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color: #F2E3DB;
+  color: #263A29;
+  border: none;
+}
