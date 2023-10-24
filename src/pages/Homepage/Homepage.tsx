@@ -18,7 +18,8 @@ const Homepage = () => {
           <p>Dia: {DIA}</p>
           <p>Dia: {HORARIO}</p>
           <p>Também deixamos aqui em cima uma listinha de presentes como sugestão pra quem se sentir confortável. 
-            Se preferir, pode também transferir o valor no PIX. Lembrando que é só sugestão! O que mais queremos é a sua presença 🥰
+            Se preferir, pode também transferir o valor no PIX. Lembrando que é só sugestão! 
+            O que mais queremos é a sua presença 🥰
           </p>
         </div>
       </div>

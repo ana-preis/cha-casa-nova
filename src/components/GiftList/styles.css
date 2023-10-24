@@ -1,0 +1,21 @@
+.list-container {
+  height: 100%;
+  color: #fff;
+  align-items: center;
+}
+
+.list-item {
+  justify-content: space-between;
+  background-color: #41644A;
+  margin: 0.5rem 3rem 0 3rem;
+  padding: 1rem;
+}
+
+.list-item-title {
+  width: 30rem;
+  text-align: center;
+}
+
+.list-item-img {
+  width: 70%;
+}
