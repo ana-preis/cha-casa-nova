@@ -23,7 +23,7 @@ export const giftList = [
   {
     index: 4,
     name: "Passadeira para cozinha",
-    imageList: ["https://http2.mlstatic.com/D_NQ_NP_2X_601182-MLB69457319526_052023-F.webp", "https://static-images-now.westwing.com.br/s/81146-8708-868101-1.jpg", "https://http2.mlstatic.com/D_NQ_NP_2X_955473-MLB72668778179_112023-F.webp"],
+    imageList: ["https://http2.mlstatic.com/D_NQ_NP_2X_601182-MLB69457319526_052023-F.webp", "https://http2.mlstatic.com/D_NQ_NP_2X_983303-MLB51992429114_102022-F.webp", "https://http2.mlstatic.com/D_NQ_NP_2X_955473-MLB72668778179_112023-F.webp"],
     status: "available",
     description: "S'o temos uma hoje. Legal seria na cor verde escuro ou cores neutras. R$28 - R$40"
   },
