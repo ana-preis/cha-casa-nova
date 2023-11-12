@@ -2,9 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 8rem;
+  width: 15rem;
   font-size: 1rem;
   border-radius: 0.8rem;
+
+  @media screen and (max-width: 600px) {
+    font-size: 0.8rem;
+    width: 10rem;
+  }
 }
 
 .button:hover {

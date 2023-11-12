@@ -9,7 +9,7 @@ const Homepage = () => {
     <div>
       <Header />
       <div className='main-container flex-column'>
-        <Slider slides={slideData} heading='Teste'/>
+        <Slider slides={slideData} heading='Teste' specStyles=''/>
         <div className='home-text-container'>
           <p>Estamos muito felizes em poder convidar você para o nosso Chá de Casa Nova!</p>
           <p>Aguardamos muito tempo pra ter nosso apartamento prontinho e passamos por diversos B.O.s de obra 🫠. 

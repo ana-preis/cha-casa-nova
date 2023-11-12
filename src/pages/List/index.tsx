@@ -1,10 +1,9 @@
 import { useState } from "react";
 import GiftList from "../../components/GiftList";
 import Header from "../../components/Header";
-import './styles.css'
+import './styles.scss'
 import Modal from "../../components/Modal";
 import Button from "../../components/Button";
-import { giftList } from "../../configs/gift_list";
 import { GiftOptions } from "../../types/GiftOptions";
 
 const List = () => {
@@ -26,7 +25,7 @@ const List = () => {
       <div className="main-container">
         <div className="container-title flex-column">
           <h1>Lista de Presentes</h1>
-          <span>Lembrando que são apenas sugestões, fiquem a vontade para trazer o que quiserem</span>
+          <span>Lembrando que são apenas sugestões, fiquem a vontade para trazer o que quiserem :D</span>
           <Button
             text="Registrar meu presente!"
             className="container-title-btn"

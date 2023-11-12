@@ -23,11 +23,13 @@ const SliderControl = (props: SliderControlProps) => {
 interface SliderProps {
   heading: string;
   slides: SlideType[];
+  specStyles?: string;
+  bgColor?: string;
 }
 
 const Slider = (props: SliderProps) => {
   const [state, setState] = useState({ current: 0 })
-  const { heading, slides } = props
+  const { heading, slides, specStyles, bgColor } = props
     
   const handlePreviousClick = ()  => {
     const previous = state.current - 1
@@ -58,7 +60,7 @@ const Slider = (props: SliderProps) => {
   }
 
   return (
-    <div className='slider' aria-labelledby={headingId}>
+    <div className={`slider ${specStyles}`} aria-labelledby={headingId}>
       <ul className="slider__wrapper" style={wrapperTransform}>
         <h3 id={headingId} className="visuallyhidden">{heading}</h3>
         
@@ -69,6 +71,7 @@ const Slider = (props: SliderProps) => {
               slide={slide}
               current={state.current}
               handleSlideClick={handleSlideClick}
+              bgColor={bgColor ?? ""}
             />
           )
         })}

@@ -14,6 +14,10 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -35,7 +39,7 @@ code {
 :root {
   --color-primary: #6B7A8F;
   --color-secondary: #101118;
-  --color-accent: #1D1F2F;
+  --color-accent: #263A29;
   --color-focus: #6D64F7;
   --base-duration: 600ms;
   --base-ease: cubic-bezier(0.25, 0.46, 0.45, 0.84);
@@ -57,4 +61,22 @@ code {
   position: absolute !important;
   white-space: nowrap;
   width: 1px;
+}
+
+h1 {
+  @media screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
+}
+
+h3 {
+  @media screen and (max-width: 600px) {
+    font-size: 0.8rem;
+  }
+}
+
+p, span, button, label {
+  @media screen and (max-width: 600px) {
+    font-size: 0.7rem;
+  }
 }

@@ -60,7 +60,7 @@
 // =========================
 
 .slider {
-  --slide-size: 70vmin;
+  --slide-size: 40vmin;
   --slide-margin: 4vmin;
   
   height: var(--slide-size);
@@ -89,7 +89,7 @@
   flex-direction: column;
   height: var(--slide-size);
   justify-content: center;
-  margin: 0 var(--slide-margin);
+  margin: 0 10px;
   opacity: 0.25;
   position: relative;
   text-align: center;
@@ -161,7 +161,7 @@
   
   height: 110%;
   left: -5%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0;
   pointer-events: none;
   position: absolute;
@@ -184,7 +184,6 @@
 }
 
 .slide__headline {
-  font-size: 8vmin;
   font-weight: 600;
   position: relative;
 }
@@ -224,4 +223,18 @@
 @keyframes fade-in {
   from { opacity: 0 }
   to   { opacity: 1 }
+}
+
+.bgColorLight {
+  background-color: #41644A;
+}
+
+.specStylesSize50 {
+  height: 50vmin;
+  width: 50vmin;
+}
+
+.specStylesSize70 {
+  height: 70vmin;
+  width: 70vmin;
 }

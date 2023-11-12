@@ -7,6 +7,15 @@
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.278);
   display: flex;
+
+  @media screen and (max-width: 600px) {
+    width: 25rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 .modal-save-gift {
@@ -16,6 +25,10 @@
   border-radius: 25px;
   background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  @media screen and (max-width: 600px) {
+    max-width: none;
+  }
 }
 
 .modal-input{
@@ -30,6 +43,11 @@
   margin-left: 1rem;
   border-radius: 15px;
   border: 1px solid rgba(85, 85, 85, 0.658);
+
+  @media screen and (max-width: 600px) {
+    height: 1.5rem;
+    width: 15rem;
+  }
 }
 
 .save-btn {
@@ -42,6 +60,12 @@
   box-shadow: 0px 2px 0 rgba(232, 106, 51, 0.658), 2px 4px 6px rgb(232, 106, 51);
   transition: all 150ms linear;
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 600px) {
+    height: 2rem;
+    width: 10rem;
+    font-size: 0.7rem;
+  }
 }
 
 .save-btn:hover {

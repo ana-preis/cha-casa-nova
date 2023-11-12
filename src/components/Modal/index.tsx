@@ -21,7 +21,7 @@ const Modal = (props: ModalProps) => {
         <button className="flex-row exit-modal-btn" onClick={() => showModal(false)}>
           <img src="./exit.svg" alt="ext"/>  
         </button>
-        <h2 className="modal-header">Presentes</h2>
+        <h1 className="modal-header">Registre sua compra!</h1>
         <div className="flex-column ai-center">
           <p>
             Seu nome:
