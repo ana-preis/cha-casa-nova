@@ -1,6 +1,6 @@
-const HORARIO = "xx:xx"
+const HORARIO = "19:00"
 const ENDERECO = "Rua Pastor William Richard Schisler Filho, Número 504 - Itacorubi, Florianópolis - SC, 88034-100. Edifício Biarritz. Apto 701"
-const DIA = "xx/xx/xx"
+const DIA = "08/12/2023"
 
 const slideData = [
   {

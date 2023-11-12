@@ -6,11 +6,12 @@ interface SlideProps {
   current: number;
   slide: any;
   handleSlideClick: any;
+  bgColor: string;
 }
 
 const Slide = (props: SlideProps) => {
 
-  const { slide, current, handleSlideClick } = props;
+  const { slide, current, handleSlideClick, bgColor } = props;
   const slideEl = createRef<HTMLDivElement>();
 
   const handleMouseMove = (event: any) => {
@@ -49,7 +50,7 @@ const Slide = (props: SlideProps) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="slide__image-wrapper">
+      <div className={`slide__image-wrapper ${bgColor}`}>
         <img 
           className="slide__image"
           alt={headline}
