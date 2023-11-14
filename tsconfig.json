@@ -21,6 +21,5 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-  ]
+    "pages/api", "components/Button", "components/DropdownCheckbox", "components/GiftList", "components/Header", "components/Modal", "components/Slide", "components/Slider", "pages/configs", "pages/Contact", "pages/Hints", "pages/Homepage", "pages/List", "pages/types", "pages/index.tsx", "pages/react-app-env.d.ts", "pages/reportWebVitals.ts"  ]
 }

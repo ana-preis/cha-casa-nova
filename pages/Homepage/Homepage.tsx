@@ -1,7 +1,7 @@
 import Header from '../../components/Header';
 import Slider from '../../components/Slider';
-import { slideData } from '../../configs/variables';
-import { ENDERECO, DIA, HORARIO } from '../../configs/variables';
+import { slideData } from '../configs/variables';
+import { ENDERECO, DIA, HORARIO } from '../configs/variables';
 import './styles.scss';
 
 const Homepage = () => {

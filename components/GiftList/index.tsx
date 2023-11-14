@@ -1,11 +1,16 @@
-import { giftList } from '../../configs/gift_list';
-import { GiftOptions } from '../../types/GiftOptions';
+import { GiftOption } from '../../pages/types/GiftOption';
 import Slider from '../Slider';
 import './styles.css'
 
-const GiftList = () => {
+interface GiftListProps {
+  gifts: GiftOption[];
+}
 
-  const getSlideData = (gift: GiftOptions) => {
+const GiftList = (props: GiftListProps) => {
+
+  const { gifts } = props
+
+  const getSlideData = (gift: GiftOption) => {
     let slideData: { src: string; index: number; headline: string; }[] = [];
     gift.imageList.forEach((i: string, index: number) => {
       slideData.push({
@@ -29,7 +34,7 @@ const GiftList = () => {
 
   return (
     <div className="list-container flex-column">
-      {giftList.map((gift) => {
+      {gifts.map((gift) => {
         return(
           <div className='list-item'>
             <div className='item-description'>

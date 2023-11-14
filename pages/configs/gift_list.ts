@@ -1,6 +1,6 @@
 export const giftList = [
   {
-    index: 0,
+    index: 1,
     name: "Porta Guardanapo acabamento em bambu ou acrilico",
     imageList: ["https://m.media-amazon.com/images/I/51klTtbuVPL._AC_SL1000_.jpg", "https://static-images-now.westwing.com.br/s/73915-1764-38839-3.jpg"],
     status: "available",
