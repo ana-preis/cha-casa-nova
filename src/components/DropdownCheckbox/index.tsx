@@ -1,21 +1,22 @@
+import React from 'react';
 import { useEffect, useState } from "react";
 import './styles.css'
-import { giftList } from "../../configs/gift_list";
-import { GiftOptions } from "../../types/GiftOptions";
+import { GiftOption } from '../../types/GiftOption';
 
 interface DropdownCheckboxProps {
-  setGifts: React.Dispatch<React.SetStateAction<GiftOptions[]>>;
+  giftList: GiftOption[];
+  setGiftsSelected: React.Dispatch<React.SetStateAction<GiftOption[]>>;
 }
 
 const DropdownCheckbox = (props: DropdownCheckboxProps) => {
-  const { setGifts } = props;
+  const { setGiftsSelected, giftList } = props;
   const [disabledItems, setDisabledItems] = useState<number[]>([])
 
   useEffect(() => {
     const unavailableGits = giftList.filter((g) => g.status === "unavailable")
     const unavailableGitsIDs = unavailableGits.map((g) => g.index)
     setDisabledItems(unavailableGitsIDs)
-  }, [])
+  }, [giftList])
 
   const mountList = (): {key: string, value: string}[] => {
     let gifts: {key: string, value: string}[] = [];
@@ -32,10 +33,10 @@ const DropdownCheckbox = (props: DropdownCheckboxProps) => {
     if (checked) {
       const selectedGift = giftList.find((g) => g.index === Number(value))
       if (selectedGift) {
-        setGifts((prevCheckedItems) => [...prevCheckedItems, selectedGift])
+        setGiftsSelected((prevCheckedItems) => [...prevCheckedItems, selectedGift])
       }
     } else {
-      setGifts((prevCheckedItems) => {
+      setGiftsSelected((prevCheckedItems) => {
         return prevCheckedItems.filter((item) => item.index !==  Number(value))
       });
     }

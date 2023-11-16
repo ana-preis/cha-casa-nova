@@ -1,19 +1,21 @@
+import React from 'react';
 import './styles.css';
 import Button from "../Button";
 import DropdownCheckbox from "../DropdownCheckbox";
-import { GiftOptions } from '../../types/GiftOptions';
+import { GiftOption } from '../../types/GiftOption';
 
 interface ModalProps {
-  handleOnSave: () => void;
+  giftList: GiftOption[];
+  handleSelectedGifts: () => Promise<void>;
   inputValue: string;
-  setInputValue: React.Dispatch<React.SetStateAction<string>>;
+  setGiver: React.Dispatch<React.SetStateAction<string>>;
   showModal: React.Dispatch<React.SetStateAction<boolean>>;
-  setGifts: React.Dispatch<React.SetStateAction<GiftOptions[]>>;
+  setSelected: React.Dispatch<React.SetStateAction<GiftOption[]>>;
 }
 
 const Modal = (props: ModalProps) => {
 
-  const { handleOnSave, inputValue, setInputValue, showModal, setGifts } = props
+  const { handleSelectedGifts, inputValue, setGiver, showModal, giftList, setSelected } = props
 
   return (
     <div className="modal-container">
@@ -29,16 +31,17 @@ const Modal = (props: ModalProps) => {
           <input
             className="input-name modal-input"
             type="text"
-            onChange={(e) => setInputValue(e.target.value)}
+            onChange={(e) => setGiver(e.target.value)}
             value={inputValue}
           />
           <p>
             Escolha o presente escolhido abaixo:
           </p>
-          <DropdownCheckbox 
-            setGifts={setGifts} 
+          <DropdownCheckbox
+            giftList={giftList}
+            setGiftsSelected={setSelected} 
           />
-          <Button text="Salvar meu presente!" className="save-btn" onClick={handleOnSave}/>
+          <Button text="Salvar meu presente!" className="save-btn" onClick={() => handleSelectedGifts()}/>
         </div>
       </div>
     </div> 
