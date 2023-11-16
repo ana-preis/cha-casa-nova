@@ -4,7 +4,7 @@ import Slider from '../../components/Slider';
 import { slideData } from '../../configs/variables';
 import { ADDRESS, DAY, TIME } from '../../configs/variables';
 import './styles.scss';
-import ViewCounter from '../../components/ViewCounter';
+// import ViewCounter from '../../components/ViewCounter';
 
 const Homepage = () => {
   return (

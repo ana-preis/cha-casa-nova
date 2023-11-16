@@ -16,7 +16,7 @@ import './styles.scss'
 
 const List = () => {
 
-  const [giftList, setGiftList] = useState<GiftOption[]>([])
+  const [giftList] = useState<GiftOption[]>([])
   const [showModal, setShowModal] = useState<boolean>(false);
   const [giverName, setGiverName] = useState<string>("")
   const [giftsFromModal, setGiftsFromModal] = useState<GiftOption[]>([])
