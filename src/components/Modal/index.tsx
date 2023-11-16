@@ -1,8 +1,8 @@
+import React from 'react';
 import './styles.css';
 import Button from "../Button";
 import DropdownCheckbox from "../DropdownCheckbox";
-import { GiftOption } from '../../pages/types/GiftOption';
-import { useState } from 'react';
+import { GiftOption } from '../../types/GiftOption';
 
 interface ModalProps {
   giftList: GiftOption[];

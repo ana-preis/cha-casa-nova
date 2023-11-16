@@ -49,6 +49,7 @@ export default async function handler(
   });
   if(request.method === 'GET') {
     const gifts = await giftsClient.hgetall('gift:list');
+    // console.log('gifts: ', gifts)
     return response.status(200).json(gifts);
   }
 }

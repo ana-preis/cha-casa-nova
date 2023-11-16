@@ -1,7 +1,7 @@
 import { useState } from "react"
 import './../../pages/Homepage/styles.scss'
 import Slide from "../Slide"
-import { SlideType } from "../../pages/types/SliderTypes";
+import { SlideType } from "../../types/SliderTypes";
 
 interface SliderControlProps {
   type: string;

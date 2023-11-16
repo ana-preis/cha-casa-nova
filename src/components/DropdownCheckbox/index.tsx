@@ -1,6 +1,7 @@
+import React from 'react';
 import { useEffect, useState } from "react";
 import './styles.css'
-import { GiftOption } from "../../pages/types/GiftOption";
+import { GiftOption } from '../../types/GiftOption';
 
 interface DropdownCheckboxProps {
   giftList: GiftOption[];

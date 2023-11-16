@@ -1,3 +1,4 @@
+import React from 'react';
 import { 
   useEffect, 
   // useMemo, 
@@ -7,7 +8,7 @@ import GiftList from "../../components/GiftList";
 import Header from "../../components/Header";
 import Modal from "../../components/Modal";
 import Button from "../../components/Button";
-import { GiftOption } from "../types/GiftOption";
+import { GiftOption } from "../../types/GiftOption";
 import './styles.scss'
 // import { GiftClient } from "../../api/giftListClient";
 // import { example } from "../../api/example";
@@ -28,26 +29,26 @@ const List = () => {
         // const gifts = await giftClient.getAllGifts() as unknown as GiftOption[];
         // const gifts = await kv.hgetall('gift:list')
         // const gifts = example();
-        const gifts = await fetch('api/kv');
-        console.log(gifts);
+        // const gifts = await fetch('api/kv');
+        // gifts.json()
+        //   .then(() => console.log(' no componente '));
         // setGiftList(gifts);
-        return
+        // return
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
     }
     fetchGifts();
   }, [])
 
   const saveNewGift = async () => {
-    console.log(JSON.stringify(giftsFromModal))
+    // console.log(JSON.stringify(giftsFromModal))
     giftsFromModal.forEach(async (gift) => {
       try {
         // await giftClient.setGift(gift)
-        console.log(gift)
-        return
+        // return
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
     })
   }

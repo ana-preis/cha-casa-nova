@@ -1,4 +1,5 @@
-import { GiftOption } from '../../pages/types/GiftOption';
+import React from 'react';
+import { GiftOption } from '../../types/GiftOption';
 import Slider from '../Slider';
 import './styles.css'
 
