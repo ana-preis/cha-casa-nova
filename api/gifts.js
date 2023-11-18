@@ -1,5 +1,4 @@
 module.exports = (req, res) => {
-  // check if is get method
   if (req.method === 'GET') {
     res.status(200).json([
       {

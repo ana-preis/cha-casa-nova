@@ -11,6 +11,7 @@ import List from '../src/pages/List';
 import Hints from '../src/pages/Hints';
 import Contact from '../src/pages/Contact';
 
+require("node-fetch")
 
 const router = createBrowserRouter([
   {

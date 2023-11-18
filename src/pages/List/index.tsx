@@ -16,27 +16,32 @@ const List = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [giverName, setGiverName] = useState<string>("")
   const [giftsFromModal, setGiftsFromModal] = useState<GiftOption[]>([])
-  const baseUrl = process.env.VERCEL_URL;
+  const baseUrl = "http://localhost:3000"
+  // const baseUrl = "https://cha-casa-nova.vercel.app"
 
   useEffect(() => {
-    const fetchGifts = async () => {
-      try {
-        // const gifts = await giftClient.getAllGifts() as unknown as GiftOption[];
-        // const gifts = await kv.hgetall('gift:list')
-        // const gifts = example();
-        console.log(`${baseUrl}/api/gifts`)
-        const gifts = await fetch(`${baseUrl}/api/gifts`);
-        gifts.json()
-          .then((data) => setGiftList(data));
+    // const fetchGifts = async () => {
+    //   try {
+
+        // const gifts = await fetch(`${baseUrl}/api/kv`, {
+        //   method: "GET",
+        //   mode: "cors",
+        //   credentials: "include",
+        //   headers: {
+        //     "Content-Type": "application/json"
+        //   },
+        // });
+        // gifts.json()
+        //   .then((data) => setGiftList(data));
         // setGiftList(gifts);
         // return
-      } catch (error) {
+      // } catch (error) {
         // console.log(error)
-      }
-    }
-    fetchGifts();
+    //   }
+    // }
+    // fetchGifts();
   }, [])
-  console.log('gift list: ', giftList)
+  // console.log('gift list: ', giftList)
   const saveNewGift = async () => {
     // console.log(JSON.stringify(giftsFromModal))
     giftsFromModal.forEach(async (gift) => {
