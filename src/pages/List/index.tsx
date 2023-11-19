@@ -1,7 +1,5 @@
-import React from 'react';
 import { 
-  useEffect, 
-  // useMemo, 
+  useEffect,
   useState 
 } from "react";
 import GiftList from "../../components/GiftList";
@@ -10,9 +8,6 @@ import Modal from "../../components/Modal";
 import Button from "../../components/Button";
 import { GiftOption } from "../../types/GiftOption";
 import './styles.scss'
-// import { GiftClient } from "../../api/giftListClient";
-// import { example } from "../../api/example";
-// import { kv } from "@vercel/kv";
 
 const List = () => {
 
@@ -20,27 +15,32 @@ const List = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [giverName, setGiverName] = useState<string>("")
   const [giftsFromModal, setGiftsFromModal] = useState<GiftOption[]>([])
-
-  // const giftClient = useMemo(() => new GiftClient(), []); 
+  // const baseUrl = "http://localhost:3000"
+  const baseUrl = "https://cha-casa-nova.vercel.app"
 
   useEffect(() => {
     const fetchGifts = async () => {
       try {
-        // const gifts = await giftClient.getAllGifts() as unknown as GiftOption[];
-        // const gifts = await kv.hgetall('gift:list')
-        // const gifts = example();
-        // const gifts = await fetch('api/kv');
-        // gifts.json()
-        //   .then(() => console.log(' no componente '));
+
+        const gifts = await fetch(`${baseUrl}/api/kv`, {
+          method: "GET",
+          mode: "cors",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json"
+          },
+        });
+        gifts.json()
+          .then((data) => setGiftList(data));
         // setGiftList(gifts);
-        // return
+        return
       } catch (error) {
-        // console.log(error)
+        console.log(error)
       }
     }
     fetchGifts();
   }, [])
-
+  console.log('gift list: ', giftList)
   const saveNewGift = async () => {
     // console.log(JSON.stringify(giftsFromModal))
     giftsFromModal.forEach(async (gift) => {

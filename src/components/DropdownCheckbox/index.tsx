@@ -26,7 +26,7 @@ const DropdownCheckbox = (props: DropdownCheckboxProps) => {
     return gifts;
   }
 
-  const [list, setList] = useState(mountList());
+  const [list] = useState(mountList());
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
