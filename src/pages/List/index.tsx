@@ -1,4 +1,3 @@
-import React from 'react';
 import { 
   useEffect,
   useState 
@@ -16,32 +15,32 @@ const List = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [giverName, setGiverName] = useState<string>("")
   const [giftsFromModal, setGiftsFromModal] = useState<GiftOption[]>([])
-  const baseUrl = "http://localhost:3000"
-  // const baseUrl = "https://cha-casa-nova.vercel.app"
+  // const baseUrl = "http://localhost:3000"
+  const baseUrl = "https://cha-casa-nova.vercel.app"
 
   useEffect(() => {
-    // const fetchGifts = async () => {
-    //   try {
+    const fetchGifts = async () => {
+      try {
 
-        // const gifts = await fetch(`${baseUrl}/api/kv`, {
-        //   method: "GET",
-        //   mode: "cors",
-        //   credentials: "include",
-        //   headers: {
-        //     "Content-Type": "application/json"
-        //   },
-        // });
-        // gifts.json()
-        //   .then((data) => setGiftList(data));
+        const gifts = await fetch(`${baseUrl}/api/kv`, {
+          method: "GET",
+          mode: "cors",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json"
+          },
+        });
+        gifts.json()
+          .then((data) => setGiftList(data));
         // setGiftList(gifts);
-        // return
-      // } catch (error) {
-        // console.log(error)
-    //   }
-    // }
-    // fetchGifts();
+        return
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchGifts();
   }, [])
-  // console.log('gift list: ', giftList)
+  console.log('gift list: ', giftList)
   const saveNewGift = async () => {
     // console.log(JSON.stringify(giftsFromModal))
     giftsFromModal.forEach(async (gift) => {
