@@ -15,8 +15,8 @@ const List = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [giverName, setGiverName] = useState<string>("")
   const [giftsFromModal, setGiftsFromModal] = useState<GiftOption[]>([])
-  const baseUrl = "http://localhost:3000"
-  // const baseUrl = "https://cha-casa-nova.vercel.app"
+  // const baseUrl = "http://localhost:3000"
+  const baseUrl = "https://cha-casa-nova.vercel.app"
 
   useEffect(() => {
     const fetchGifts = async () => {
