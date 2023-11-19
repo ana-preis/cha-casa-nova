@@ -8,8 +8,6 @@ require("node-fetch")
 
 // const kvClient = createClient({
 
-
-
 module.exports = async (req, res) => {
 
   // const kvClient = kv.createClient({
@@ -22,16 +20,16 @@ module.exports = async (req, res) => {
 
 
   if (req.method === 'GET') {
-    console.log(' dentro do get: ', )
+    console.log('dentro do get')
     fetch(`${KV_REST_API_URL}/`, {
       headers: {
         Authorization: `Bearer ${KV_REST_API_TOKEN}`,
       },
-      body: '["GET", "gift:list"]',
+      body: '["HGETALL", "gift:list"]',
       method: 'POST',
     })
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => console.log('backend response: ',  data));
     // try {
     //   console.group(' dentro do try: ')
     //   // const giftList = await kvClient.hgetall("gift:list");
