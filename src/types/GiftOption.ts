@@ -4,5 +4,5 @@ export interface GiftOption {
   status: string;
   description?: string;
   imageList: string[];
-  giver?: string;
+  owner?: string;
 }

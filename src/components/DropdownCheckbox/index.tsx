@@ -21,7 +21,9 @@ const DropdownCheckbox = (props: DropdownCheckboxProps) => {
   const mountList = (): {key: string, value: string}[] => {
     let gifts: {key: string, value: string}[] = [];
     giftList.forEach((gift) => {
-      gifts = gifts.concat( { key: `${gift.index}`, value: gift.name } )
+      if (gift.index && gift.status !== 'unavailable') {
+        gifts = gifts.concat( { key: `${gift.index}`, value: gift.name } )
+      }
     })
     return gifts;
   }

@@ -16,7 +16,8 @@ interface ModalProps {
 const Modal = (props: ModalProps) => {
 
   const { handleSelectedGifts, inputValue, setGiver, showModal, giftList, setSelected } = props
-
+  console.log('input value: ', inputValue)
+  console.log('gifts modal: ', giftList)
   return (
     <div className="modal-container">
       <div className="modal-save-gift flex-column ai-center">

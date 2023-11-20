@@ -31,27 +31,24 @@ const List = () => {
             "Access-Control-Allow-Origin": "*"
           },
         });
-        gifts.json().then((data) => setGiftList(data));
+        gifts.json().then((data) => setGiftList(Object.values(data)));
         return;
       } catch (error) {
-        console.log('erro in client side: ', error)
+        console.log('error in client side: ', error)
       }
     }
     fetchGifts();
   }, [])
 
-  console.log('gift list: ', giftList)
-
   const saveNewGift = async () => {
-    console.log(JSON.stringify(giftsFromModal))
     giftsFromModal.forEach(async (gift) => {
       try {
-        const data = {
+        console.log('data to save in kv: ', JSON.stringify({
           ...gift,
-          state: "unavailable",
+          status: "unavailable",
           owner: giverName
-        }
-        await await fetch(`${baseUrl}/api/kv`, {
+        }))
+        await fetch(`${baseUrl}/api/kv`, {
           method: "POST",
           mode: "cors",
           credentials: "include",
@@ -59,8 +56,14 @@ const List = () => {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*"
           },
-          body: data as unknown as BodyInit,
+          body: JSON.stringify({
+            ...gift,
+            status: "unavailable",
+            owner: giverName
+          }),
         });
+        setShowModal(false)
+        // window.location.reload();
         return
       } catch (error) {
         console.log(error)
