@@ -12,7 +12,7 @@ const Header = () => {
           <button>Lista do chá de casa nova</button>
         </Link>
         <Link to="/dicas">
-          <button>Dicas e Observacoes</button>
+          <button>Dicas e Observções</button>
         </Link>
         <Link to="/contato">
           <button>Fale com a gente!</button>

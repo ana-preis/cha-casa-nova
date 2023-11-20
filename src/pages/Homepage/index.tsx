@@ -1,10 +1,8 @@
-import { Suspense } from 'react';
 import Header from '../../components/Header';
 import Slider from '../../components/Slider';
 import { slideData } from '../../configs/variables';
 import { ADDRESS, DAY, TIME } from '../../configs/variables';
 import './styles.scss';
-// import ViewCounter from '../../components/ViewCounter';
 
 const Homepage = () => {
   return (
@@ -18,17 +16,13 @@ const Homepage = () => {
             Agora queremos dividir com você nosso lar! Vem tomar uns drinks e jogar conversa fora!</p>
           <p>Endereço: {ADDRESS}</p>
           <p>Dia: {DAY}</p>
-          <p>Hor'ario: {TIME}</p>
+          <p>Horário: {TIME}</p>
           <p>Também deixamos aqui em cima uma listinha de presentes como sugestão pra quem se sentir confortável. 
             Se preferir, pode também transferir o valor no PIX. Lembrando que é só sugestão! 
             O que mais queremos é a sua presença 🥰
           </p>
         </div>
       </div>
-      <Suspense>
-        {/* <ViewCounter/> */}
-      </Suspense>
-      
     </div>
   )
 }
