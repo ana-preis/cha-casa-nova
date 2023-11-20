@@ -46,6 +46,11 @@ const List = () => {
     console.log(JSON.stringify(giftsFromModal))
     giftsFromModal.forEach(async (gift) => {
       try {
+        const data = {
+          ...gift,
+          state: "unavailable",
+          owner: giverName
+        }
         await await fetch(`${baseUrl}/api/kv`, {
           method: "POST",
           mode: "cors",
@@ -54,7 +59,7 @@ const List = () => {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*"
           },
-          body: gift as unknown as BodyInit,
+          body: data as unknown as BodyInit,
         });
         return
       } catch (error) {

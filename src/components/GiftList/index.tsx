@@ -8,7 +8,7 @@ interface GiftListProps {
 
 const GiftList = (props: GiftListProps) => {
 
-  const { gifts } = props
+  const { gifts = [] } = props
 
   const getSlideData = (gift: GiftOption) => {
     let slideData: { src: string; index: number; headline: string; }[] = [];
@@ -34,16 +34,19 @@ const GiftList = (props: GiftListProps) => {
 
   return (
     <div className="list-container flex-column">
-      {gifts && gifts.map((gift) => {
-        return(
-          <div className='list-item'>
-            <div className='item-description'>
-              <h3>{gift.name}</h3>
-              <p>{gift.description} | Status: {getStatus(gift.status)}</p>
+      {gifts.map((gift) => {
+        if (gift.index) {
+          return(
+            <div className='list-item'>
+              <div className='item-description'>
+                <h3>{gift.name}</h3>
+                <p>{gift.description} | Status: {getStatus(gift.status)}</p>
+              </div>
+              <Slider slides={getSlideData(gift)} heading='Teste' bgColor='bgColorLight'/>
             </div>
-            <Slider slides={getSlideData(gift)} heading='Teste' bgColor='bgColorLight'/>
-          </div>
-        )
+          )
+        }
+        return null;
       })}
     </div>
   )
