@@ -35,7 +35,7 @@ const Modal = (props: ModalProps) => {
             value={inputValue}
           />
           <p>
-            Escolha o presente escolhido abaixo:
+            Selecione o presente escolhido abaixo:
           </p>
           <DropdownCheckbox
             giftList={giftList}

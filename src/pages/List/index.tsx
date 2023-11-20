@@ -27,28 +27,38 @@ const List = () => {
           mode: "cors",
           credentials: "include",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
           },
         });
-        gifts.json()
-          .then((data) => setGiftList(data));
-        // setGiftList(gifts);
-        return
+        gifts.json().then((data) => setGiftList(data));
+        return;
       } catch (error) {
         console.log('erro in client side: ', error)
       }
     }
     fetchGifts();
   }, [])
+
   console.log('gift list: ', giftList)
+
   const saveNewGift = async () => {
-    // console.log(JSON.stringify(giftsFromModal))
+    console.log(JSON.stringify(giftsFromModal))
     giftsFromModal.forEach(async (gift) => {
       try {
-        // await giftClient.setGift(gift)
-        // return
+        await await fetch(`${baseUrl}/api/kv`, {
+          method: "POST",
+          mode: "cors",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+          },
+          body: gift as unknown as BodyInit,
+        });
+        return
       } catch (error) {
-        // console.log(error)
+        console.log(error)
       }
     })
   }

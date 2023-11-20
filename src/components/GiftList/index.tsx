@@ -1,4 +1,3 @@
-import React from 'react';
 import { GiftOption } from '../../types/GiftOption';
 import Slider from '../Slider';
 import './styles.css'
@@ -26,16 +25,16 @@ const GiftList = (props: GiftListProps) => {
   const getStatus = (status: string) => { 
     switch (status) {
       case "available":
-        return "Dispon'ivel"
+        return "Disponível"
       case "unavailable":
-        return "J'a foi comprado"
+        return "Já foi comprado"
     }
       
   }
 
   return (
     <div className="list-container flex-column">
-      {gifts.map((gift) => {
+      {gifts && gifts.map((gift) => {
         return(
           <div className='list-item'>
             <div className='item-description'>
