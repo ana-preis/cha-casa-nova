@@ -32,6 +32,7 @@
   color: #263A29;
   cursor: pointer;
   transition: 0.5s;
+  font-size: 0.7rem;
 
   @media screen and (max-width: 600px) {
     font-size: 0.6rem;

@@ -22,7 +22,6 @@ const List = () => {
   useEffect(() => {
     const fetchGifts = async () => {
       try {
-
         const gifts = await fetch(`${baseUrl}/api/kv`, {
           method: "GET",
           mode: "cors",
@@ -111,10 +110,6 @@ const List = () => {
             text="Registrar meu presente!"
             className="container-title-btn"
             onClick={() => setShowModal(true)}
-          />
-          <Button
-            text="Popular lista"
-            onClick={handlePopulateKV}
           />
         </div>
         <GiftList 
