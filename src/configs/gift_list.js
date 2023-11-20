@@ -1,4 +1,4 @@
-export const giftList = [
+export const giftListConfig = [
   {
     index: 1,
     name: "Porta Guardanapo acabamento em bambu ou acrílico",

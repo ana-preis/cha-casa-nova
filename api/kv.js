@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
     } catch (error) {
       return res.status(500).json({err:"erro: "})
     }
-  } else  if (req.method === 'POST') {
+  } else if (req.method === 'POST') {
     const data = req.body;
     console.log('data to be saved in bff: ', data)
     const kvKey = data.index?.toString();
@@ -29,6 +29,19 @@ module.exports = async (req, res) => {
       res.status(200).send({msg: 'POST Hello World!'});
     } catch (error) {
       console.log('Error in POST: ', error)
+    }
+  } else if (req.method === 'PUT') {
+    const gift = req.body;
+    const kvKey = gift.index;
+    const fields = {}
+    fields[`${kvKey}`] = gift;
+    try {
+      console.log('fields after set: ', fields)
+      await kvClient.hset("gift:list2", fields)
+      res.status(200).send({msg: 'Populated Successfully!'});
+    } catch (error) {
+      console.log('Error in POST: ', error)
+      return;
     }
   } else {
     return

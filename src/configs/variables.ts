@@ -1,4 +1,4 @@
-const TIME = "19:00"
+const TIME = "18:30"
 const ADDRESS = "Rua Pastor William Richard Schisler Filho, Número 504 - Itacorubi, Florianópolis - SC, 88034-100. Edifício Biarritz. Apto 701"
 const DAY = "08/12/2023"
 

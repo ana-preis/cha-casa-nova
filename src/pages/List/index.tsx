@@ -8,6 +8,7 @@ import Modal from "../../components/Modal";
 import Button from "../../components/Button";
 import { GiftOption } from "../../types/GiftOption";
 import './styles.scss'
+import { giftListConfig } from "../../configs/gift_list";
 
 const List = () => {
 
@@ -63,14 +64,41 @@ const List = () => {
           }),
         });
         setShowModal(false)
-        // window.location.reload();
+        window.location.reload();
         return
       } catch (error) {
         console.log(error)
       }
     })
   }
-  
+
+  function sleep(ms: number | undefined) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms)
+    })
+  }
+
+  const handlePopulateKV = () => {
+    giftListConfig.forEach(async (gift) => {
+      try {
+        console.log('data to save in kv: ', JSON.stringify(gift))
+        await fetch(`${baseUrl}/api/kv`, {
+          method: "PUT",
+          mode: "cors",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+          },
+          body: JSON.stringify(gift),
+        });
+        return
+      } catch (error) {
+        console.log(error)
+      }
+      sleep(3000);
+    })
+  }
 
   return (
     <div>
@@ -83,6 +111,10 @@ const List = () => {
             text="Registrar meu presente!"
             className="container-title-btn"
             onClick={() => setShowModal(true)}
+          />
+          <Button
+            text="Popular lista"
+            onClick={handlePopulateKV}
           />
         </div>
         <GiftList 
